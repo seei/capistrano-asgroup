@@ -20,6 +20,9 @@ module Capistrano
         # Get descriptions of all the EC2 instances
         @ec2DescInst = @ec2_api.describe_instances
 
+        puts "AS Desc: #{@autoScaleDesc}"
+        puts "EC2 Desc: #{@ec2DescInst}"
+
         # Find the right Auto Scaling group
         @autoScaleDesc.each do |asGroup|
             # Look for an exact name match or Cloud Formation style match (<cloud_formation_script>-<as_name>-<generated_id>)
